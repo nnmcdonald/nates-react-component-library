@@ -1,14 +1,46 @@
 ## Installing this package in a React project
 
-Run the following command to install this package, replacing '#v1.0.0' will install the corresponding release.
+Run the following command to install this package, replacing '#v1.1.0' will install the corresponding release.
 
 ```
-npm install https://github.com/nnmcdonald/nates-react-component-library#v1.0.0
+npm install https://github.com/nnmcdonald/nates-react-component-library#v1.1.0
 ```
 
 ## Available Components
 
-These components are exported by this package and may be imported in other projects.
+These React components are exported by this package and may be imported in other projects.
+
+### `Checkbox`
+```
+import { Checkbox } from 'nates-react-component-library'
+```
+
+A custom checkbox, uses a Font Awesome icon by default for the checkmark but may be customized further.
+
+| Props |
+| ----- |
+| Name | Required | Description |
+|------|----------|-------------|
+| defaultChecked | No | Specifies if the checkbox input should be 'checked' when the component is rendered. |
+
+```jsx
+// Default
+<Checkbox
+    defaultChecked={this.state.checkboxIsSelected}
+/>
+
+// or with a custom icon
+<Checkbox
+    defaultChecked={this.state.checkboxIsSelected}
+>
+    <span>√</span>
+</Checkbox>
+```
+
+### `LeadForm`
+```
+import { LeadForm } from 'nates-react-component-library'
+```
 
 ### `LoadScreen`
 ```
