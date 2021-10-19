@@ -7,8 +7,8 @@ function App() {
       {/* Test components here */ }
       <LeadForm 
         onSubmit={() => console.log("TEST")}
-        firstName={true}
-        lastName={true}
+        firstName={{label: "First Name", required: true}}
+        lastName={{label: "Last Name", required: true}}
         generalPhone={true}
         mobilePhone={true}
         workPhone={true}
@@ -16,7 +16,7 @@ function App() {
       >
         <div className="LeadForm__formGroup">
           <div className="LeadForm__formControl">
-            <label for="first-name-input">State of Residence</label>
+            <label htmlFor="first-name-input">State of Residence</label>
             <input id="state-input" type="text" name="state" />
           </div>
         </div>

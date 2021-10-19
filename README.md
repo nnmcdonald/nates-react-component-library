@@ -44,34 +44,63 @@ import { LeadForm } from 'nates-react-component-library'
 This is a generic form for collecting basic sales lead/contact information.
 
 #### Props
-| Name | Required | Description |
+| Name | Required | Type | Default Value | Description |
 |------|----------|-------------|
-| firstName | No | If true then the firstName input field will be rendered. |
-| lastName | No | If true then the lastName input field will be rendered. |
-| generalPhone | No | If true then the generalPhone input field will be rendered. |
-| mobilePhone | No | If true then the mobilePhone input field will be rendered. |
-| workPhone | No | If true then the workPhone input field will be rendered. |
-| email | No | If true then the email input field will be rendered. |
+| onSubmit | Yes | function | N/A | This function is called when the form is submittd, it should take a single argument for the event data. |
+| formH1 | No | string | "Contact Form" | A string value to be displayed in the h1 tag of the form. |
+| formDescription | No | string | "" | A string that will be displayed at the top of the form under the h1 tag. |
+| firstName | No | Boolean or Object | { label: "First Name", required: false, error: false } | If true then the firstName input field will be rendered with default values. |
+| lastName | No | Boolean or Object | { label: "Last Name", required: false, error: false } | If true then the lastName input field will be rendered with default values. |
+| generalPhone | No | Boolean or Object | { label: "Phone", required: false, error: false } | If true then the generalPhone input field will be rendered with default values. |
+| mobilePhone | No | Boolean or Object | { label: "Mobile Phone", required: false, error: false } | If true then the mobilePhone input field will be rendered with default values. |
+| workPhone | No | Boolean or Object | { label: "Work Phone", required: false, error: false } | If true then the workPhone input field will be rendered with default values. |
+| email | No | Boolean or Object | { label: "Email", required: false, error: false }| If true then the email input field will be rendered with default values. |
 
 ```jsx
 // With just basic fields
 <LeadForm
-    firstName={{label: "First Name", required: true}}
-    lastName={{label: "Last Name", required: true}}
+    onSubmit={submitHandler}
+    formH1="Example Form"
+    formDescription="This is an example of a basic lead form."
+    firstName={{label: "First Name", required: true, error: this.state.errors.firstName}}
+    lastName={{label: "Last Name", required: true, error: this.state.errors.lastName}}
     generalPhone={{label: "Phone (home)", required: false}}
     mobilePhone={{label: "Phone (mobile)", required: false}}
     workPhone={{label: "Work Phone", required: false}}
-    email={{label: "Email", required: true}}
+    email={{label: "Email", required: true, error: this.state.errors.email}}
 />
 
-// With only specific basic inputs and an additional custom input
+// With only specific basic inputs and additional custom inputs
 <LeadForm
-    firstName={true}
+    formH1="Enter a Raffle"
+    formDescription="This is a second example where a user might enter a raffle."
+    firstName={{label: "First Name", required: true, error: this.state.errors.firstName}}
     lastName={true}
+    email={{label: "Email", required: true, error: this.state.errors.email}}
 >
-    <div className='formControl'>
-        <label for="cst-rewards-num">Customer Rewards Number</label>
-        <input id="cst-rewards-num" name="cst-rewards-num" type="text" />
+    <div className="LeadForm__formGroup">
+        <div className='LeadForm__formControl'>
+            <label htmlFor="cst-rewards-num">Customer Rewards Number</label>
+            {
+                this.state.errors.cstRewardsNumber ?
+                <span className="error-msg">
+                    {this.state.errors.cstRewardsNumber}
+                </span>
+                : ''
+            }
+            <input id="cst-rewards-num" name="cst-rewards-num" type="text" />
+        </div>
+        <div className="LeadForm__formControl">
+            <label htmlFor="first-name-input">State of Residence</label>
+            {
+                this.state.errors.residenceState ?
+                <span className="error-msg">
+                    {this.state.errors.residenceState}
+                </span>
+                : ''
+            }
+            <input id="state-input" type="text" name="state" />
+        </div>
     </div>
 </LeadForm>
 ```
