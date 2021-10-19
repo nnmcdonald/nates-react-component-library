@@ -50,20 +50,18 @@ This is a generic form for collecting basic sales lead/contact information.
 | lastName | No | If true then the lastName input field will be rendered. |
 | generalPhone | No | If true then the generalPhone input field will be rendered. |
 | mobilePhone | No | If true then the mobilePhone input field will be rendered. |
+| workPhone | No | If true then the workPhone input field will be rendered. |
 | email | No | If true then the email input field will be rendered. |
-| address | No | If true then the address input field will be rendered. |
-| zip | No | If true then the zip input field will be rendered. |
 
 ```jsx
 // With just basic fields
 <LeadForm
-    firstName={true}
-    lastName={true}
-    generalPhone={true}
-    mobilePhone={true}
-    email={true}
-    address={true}
-    zip={true}
+    firstName={{label: "First Name", required: true}}
+    lastName={{label: "Last Name", required: true}}
+    generalPhone={{label: "Phone (home)", required: false}}
+    mobilePhone={{label: "Phone (mobile)", required: false}}
+    workPhone={{label: "Work Phone", required: false}}
+    email={{label: "Email", required: true}}
 />
 
 // With only specific basic inputs and an additional custom input

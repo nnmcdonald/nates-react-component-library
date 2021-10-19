@@ -1,11 +1,26 @@
-import { LoadScreen } from '../lib/components/UI/LoadScreen/LoadScreen';
+import { LeadForm } from '../lib/components/LeadForm/LeadForm';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       {/* Test components here */ }
-      <LoadScreen />
+      <LeadForm 
+        onSubmit={() => console.log("TEST")}
+        firstName={true}
+        lastName={true}
+        generalPhone={true}
+        mobilePhone={true}
+        workPhone={true}
+        email={true}
+      >
+        <div className="LeadForm__formGroup">
+          <div className="LeadForm__formControl">
+            <label for="first-name-input">State of Residence</label>
+            <input id="state-input" type="text" name="state" />
+          </div>
+        </div>
+      </LeadForm>
     </div>
   );
 }
