@@ -17,8 +17,7 @@ import { Checkbox } from 'nates-react-component-library'
 
 A custom checkbox, uses a Font Awesome icon by default for the checkmark but may be customized further.
 
-| Props |
-| ----- |
+#### Props
 | Name | Required | Description |
 |------|----------|-------------|
 | defaultChecked | No | Specifies if the checkbox input should be 'checked' when the component is rendered. |
@@ -42,6 +41,43 @@ A custom checkbox, uses a Font Awesome icon by default for the checkmark but may
 import { LeadForm } from 'nates-react-component-library'
 ```
 
+This is a generic form for collecting basic sales lead/contact information.
+
+#### Props
+| Name | Required | Description |
+|------|----------|-------------|
+| firstName | No | If true then the firstName input field will be rendered. |
+| lastName | No | If true then the lastName input field will be rendered. |
+| generalPhone | No | If true then the generalPhone input field will be rendered. |
+| mobilePhone | No | If true then the mobilePhone input field will be rendered. |
+| email | No | If true then the email input field will be rendered. |
+| address | No | If true then the address input field will be rendered. |
+| zip | No | If true then the zip input field will be rendered. |
+
+```jsx
+// With just basic fields
+<LeadForm
+    firstName={true}
+    lastName={true}
+    generalPhone={true}
+    mobilePhone={true}
+    email={true}
+    address={true}
+    zip={true}
+/>
+
+// With only specific basic inputs and an additional custom input
+<LeadForm
+    firstName={true}
+    lastName={true}
+>
+    <div className='formControl'>
+        <label for="cst-rewards-num">Customer Rewards Number</label>
+        <input id="cst-rewards-num" name="cst-rewards-num" type="text" />
+    </div>
+</LeadForm>
+```
+
 ### `LoadScreen`
 ```
 import { LoadScreen } from 'nates-react-component-library'
@@ -49,7 +85,8 @@ import { LoadScreen } from 'nates-react-component-library'
 
 This component may be used to indicate a loading state. It overlays the full width and height of it's container and displays the text "Loading..." with a simple animation.
 
-Props: none
+#### Props
+none
 
 ```jsx
 {
