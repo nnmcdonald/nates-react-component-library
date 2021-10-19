@@ -45,7 +45,7 @@ This is a generic form for collecting basic sales lead/contact information.
 
 #### Props
 | Name | Required | Type | Default Value | Description |
-|------|----------|-------------|
+|------|----------|------|---------------|-------------|
 | onSubmit | Yes | function | N/A | This function is called when the form is submittd, it should take a single argument for the event data. |
 | formH1 | No | string | "Contact Form" | A string value to be displayed in the h1 tag of the form. |
 | formDescription | No | string | "" | A string that will be displayed at the top of the form under the h1 tag. |
