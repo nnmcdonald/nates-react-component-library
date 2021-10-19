@@ -1,6 +1,6 @@
 {
   "name": "nates-react-component-library",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "private": true,
   "dependencies": {
@@ -27,6 +27,16 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nnmcdonald/nates-react-component-library"
+  },
+  "keywords": [
+    "react",
+    "component"
+  ],
+  "author": "Nathaniel McDonald",
+  "license": "ISC",
   "eslintConfig": {
     "extends": [
       "react-app",
