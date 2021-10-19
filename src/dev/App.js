@@ -7,6 +7,7 @@ function App() {
       {/* Test components here */ }
       <LeadForm 
         onSubmit={() => console.log("TEST")}
+        formDescription="This is a test"
         firstName={{label: "First Name", required: true}}
         lastName={{label: "Last Name", required: true}}
         generalPhone={true}

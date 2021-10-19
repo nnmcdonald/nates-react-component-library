@@ -120,8 +120,10 @@ const LeadForm = (props) => {
 
     return (
         <form onSubmit={submitHandler} className="LeadForm">
-            <h1>{props.formH1 ? props.formH1 : 'Contact Us'}</h1>
-            <p>{props.formDescription ? props.formDescription : ''}</p>
+            <div className="LeadForm__heading">
+                <h1>{props.formH1 ? props.formH1 : 'Contact Us'}</h1>
+                <p>{props.formDescription ? props.formDescription : ''}</p>
+            </div>
             {defaultFormFields()}
             {props.children}
         </form>
