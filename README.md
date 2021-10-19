@@ -1,8 +1,31 @@
-# Getting Started with Create React App
+## Installing this package in a React project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Run the following command to install this package, replacing '#v1.0.0' will install the corresponding release.
 
-## Available Scripts
+```
+npm install https://github.com/nnmcdonald/nates-react-component-library#v1.0.0
+```
+
+## Available Components
+
+These components are exported by this package and may be imported in other projects.
+
+### `LoadScreen`
+```
+import { LeadForm } from 'nates-react-component-library'
+```
+
+This component may be used to indicate a loading state. It overlays the full width and height of it's container and displays the text "Loading..." with a simple animation.
+
+Props: none
+
+```jsx
+{
+    this.state.isLoading ? <LoadScreen/> : ''
+}
+```
+
+## Available Development Scripts
 
 ### `npm start`
 
@@ -19,14 +42,4 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm run build`
 
-Builds the package for production and outputs to the `dist` folder.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Builds the package for production and outputs to the `dist` folder. It does this by processing the 'src/lib/' folder with Babel.
