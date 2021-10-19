@@ -12,7 +12,7 @@ These components are exported by this package and may be imported in other proje
 
 ### `LoadScreen`
 ```
-import { LeadForm } from 'nates-react-component-library'
+import { LoadScreen } from 'nates-react-component-library'
 ```
 
 This component may be used to indicate a loading state. It overlays the full width and height of it's container and displays the text "Loading..." with a simple animation.
