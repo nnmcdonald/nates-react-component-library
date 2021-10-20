@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Checkbox = () => {
+const Checkbox = (props) => {
     return (
         <div>
             
