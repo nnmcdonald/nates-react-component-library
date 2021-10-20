@@ -135,6 +135,10 @@ Note: the input and button styling may be adjusted with the classes 'searchInput
 | onSearch | Yes | function | N/A | This function should process the search, it should expect one argument of type string for the query submitted. |
 
 ```jsx
+searchHandler = (query) => {
+    // Do something with the query string.
+}
+
 <SearchBar onSearch={this.searchHandler} />
 ```
 
