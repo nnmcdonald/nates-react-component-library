@@ -126,6 +126,9 @@ const LeadForm = (props) => {
             </div>
             {defaultFormFields()}
             {props.children}
+            <div className="LeadForm__btnRow">
+                <button type="submit">Submit</button>
+            </div>
         </form>
     )
 }
