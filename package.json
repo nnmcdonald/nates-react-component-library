@@ -11,7 +11,9 @@
   },
   "scripts": {
     "prestart": "rimraf dist",
-    "start": "npx babel src/ --watch --out-dir dist/ --copy-files",
+    "start": "npm run watch",
+    "prewatch": "npm link",
+    "watch": "npx babel src/ --watch --out-dir dist/ --copy-files",
     "prebuild": "rimraf dist",
     "build": "npx babel src/ --out-dir dist --copy-files"
   },
