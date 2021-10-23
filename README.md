@@ -1,10 +1,154 @@
-# Getting Started with Create React App
+## Installing this package in a React project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Run the following command to install this package, replacing '#v1.1.0' will install the corresponding release.
 
-## Available Scripts
+```
+npm install https://github.com/nnmcdonald/nates-react-component-library#v1.1.0
+```
 
-In the project directory, you can run:
+## Available Components
+
+These React components are exported by this package and may be imported in other projects.
+
+### `Checkbox`
+```
+import { Checkbox } from 'nates-react-component-library'
+```
+
+A custom checkbox, uses a swappable Font Awesome icon for the checkmark.
+
+#### Props
+| Name | Required | Type | Default Value | Description |
+|------|----------|------|---------------|-------------|
+| label | No | string | "" | A string used to label the checkbox. |
+| checkIcon | No | string | "fas fa-check" | This specifies the font-awesome classes to be used for the checkbox icon, the default is a solid checkmark. |
+| checked | No | bool | false | Specifies if the checkbox input should be 'checked' when the component is rendered. |
+| onChange | No | function | N/A | A function to be called when the checkbox changes, i.e. is clicked. |
+
+```jsx
+{/* Default */}
+<Checkbox 
+    onChange={clickHandler}
+    label="Would you like to subscribe to our newsletter?"
+    checked={true}
+/>
+
+{/* or with a custom icon */}
+<Checkbox
+    onChange={clickHandler}
+    label="Would you like to subscribe to our newsletter?"
+    checkIcon="fas fa-times"
+    checked={true}
+/>
+```
+
+### `LeadForm`
+```
+import { LeadForm } from 'nates-react-component-library'
+```
+
+This is a generic form for collecting basic sales lead/contact information.
+
+#### Props
+| Name | Required | Type | Default Value | Description |
+|------|----------|------|---------------|-------------|
+| onSubmit | Yes | function | N/A | This function is called when the form is submitted, it should take a single argument for the event data. |
+| formH1 | No | string | "Contact Form" | A string value to be displayed in the h1 tag of the form. |
+| formDescription | No | string | "" | A string that will be displayed at the top of the form under the h1 tag. |
+| firstName | No | Boolean or Object | { label: "First Name", required: false, error: false } | If true then the firstName input field will be rendered with default values. |
+| lastName | No | Boolean or Object | { label: "Last Name", required: false, error: false } | If true then the lastName input field will be rendered with default values. |
+| generalPhone | No | Boolean or Object | { label: "Phone", required: false, error: false } | If true then the generalPhone input field will be rendered with default values. |
+| mobilePhone | No | Boolean or Object | { label: "Mobile Phone", required: false, error: false } | If true then the mobilePhone input field will be rendered with default values. |
+| workPhone | No | Boolean or Object | { label: "Work Phone", required: false, error: false } | If true then the workPhone input field will be rendered with default values. |
+| email | No | Boolean or Object | { label: "Email", required: false, error: false }| If true then the email input field will be rendered with default values. |
+
+```jsx
+{/* With just basic fields */}
+<LeadForm
+    onSubmit={submitHandler}
+    formH1="Example Form"
+    formDescription="This is an example of a basic lead form."
+    firstName={{label: "First Name", required: true, error: this.state.errors.firstName}}
+    lastName={{label: "Last Name", required: true, error: this.state.errors.lastName}}
+    generalPhone={{label: "Phone (home)", required: false}}
+    mobilePhone={{label: "Phone (mobile)", required: false}}
+    workPhone={{label: "Work Phone", required: false}}
+    email={{label: "Email", required: true, error: this.state.errors.email}}
+/>
+
+{/* With only specific basic inputs and additional custom inputs */}
+<LeadForm
+    formH1="Enter a Raffle"
+    formDescription="This is a second example where a user might enter a raffle."
+    firstName={{label: "First Name", required: true, error: this.state.errors.firstName}}
+    lastName={true}
+    email={{label: "Email", required: true, error: this.state.errors.email}}
+>
+    <div className="LeadForm__formGroup">
+        <div className='LeadForm__formControl'>
+            <label htmlFor="cst-rewards-num">Customer Rewards Number</label>
+            {
+                this.state.errors.cstRewardsNumber ?
+                <span className="error-msg">
+                    {this.state.errors.cstRewardsNumber}
+                </span>
+                : ''
+            }
+            <input id="cst-rewards-num" name="cst-rewards-num" type="text" />
+        </div>
+        <div className="LeadForm__formControl">
+            <label htmlFor="first-name-input">State of Residence</label>
+            {
+                this.state.errors.residenceState ?
+                <span className="error-msg">
+                    {this.state.errors.residenceState}
+                </span>
+                : ''
+            }
+            <input id="state-input" type="text" name="state" />
+        </div>
+    </div>
+</LeadForm>
+```
+
+### `LoadScreen`
+```
+import { LoadScreen } from 'nates-react-component-library'
+```
+
+This component may be used to indicate a loading state. It overlays the full width and height of it's container and displays the text "Loading..." with a simple animation.
+
+#### Props
+none
+
+```jsx
+{
+    this.state.isLoading ? <LoadScreen/> : ''
+}
+```
+
+### `SearchBar`
+```
+import { SearchBar } from 'nates-react-component-library'
+```
+
+This is a basic search bar with a text input field and a submit button. 
+Note: the input and button styling may be adjusted with the classes 'searchInput--custom' and 'searchButton--custom' respectively.
+
+#### Props
+| Name | Required | Type | Default Value | Description |
+|------|----------|------|---------------|-------------|
+| onSearch | Yes | function | N/A | This function should process the search, it should expect one argument of type string for the query submitted. |
+
+```jsx
+const searchHandler = (query) => {
+    // Do something with the query string.
+}
+
+<SearchBar onSearch={searchHandler} />
+```
+
+## Available Development Scripts
 
 ### `npm start`
 
@@ -21,50 +165,4 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Builds the package for production and outputs to the `dist` folder. It does this by processing the 'src/lib/' folder with Babel.
