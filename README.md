@@ -15,28 +15,31 @@ These React components are exported by this package and may be imported in other
 import { Checkbox } from 'nates-react-component-library'
 ```
 
-A custom checkbox, uses a Font Awesome icon by default for the checkmark but may be customized further.
+A custom checkbox, uses a swappable Font Awesome icon for the checkmark.
 
 #### Props
 | Name | Required | Type | Default Value | Description |
 |------|----------|------|---------------|-------------|
 | label | No | string | "" | A string used to label the checkbox. |
 | checkIcon | No | string | "fas fa-check" | This specifies the font-awesome classes to be used for the checkbox icon, the default is a solid checkmark. |
-| defaultChecked | No | bool | false | Specifies if the checkbox input should be 'checked' when the component is rendered. |
+| checked | No | bool | false | Specifies if the checkbox input should be 'checked' when the component is rendered. |
 | onChange | No | function | N/A | A function to be called when the checkbox changes, i.e. is clicked. |
 
 ```jsx
 // Default
-<Checkbox
-    defaultChecked={this.state.checkboxIsSelected}
+<Checkbox 
+    onChange={clickHandler}
+    label="Would you like to subscribe to our newsletter?"
+    checked={true}
 />
 
 // or with a custom icon
 <Checkbox
-    defaultChecked={this.state.checkboxIsSelected}
->
-    <span>√</span>
-</Checkbox>
+    onChange={clickHandler}
+    label="Would you like to subscribe to our newsletter?"
+    checkIcon="fas fa-times"
+    checked={true}
+/>
 ```
 
 ### `LeadForm`
