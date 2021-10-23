@@ -3,29 +3,19 @@
   "version": "1.1.0",
   "main": "dist/index.js",
   "private": true,
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
     "@babel/cli": "7.15.7",
     "@babel/preset-env": "7.15.8",
     "@babel/preset-react": "7.14.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "rimraf": "3.0.2",
-    "web-vitals": "^1.1.2"
+    "rimraf": "3.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "prestart": "rimraf dist",
+    "start": "npm run watch",
+    "prewatch": "npm link",
+    "watch": "npx babel src/ --watch --out-dir dist/ --copy-files",
     "prebuild": "rimraf dist",
-    "build": "npx babel src/lib --out-dir dist --copy-files --ignore src/lib/index.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "npx babel src/ --out-dir dist --copy-files"
   },
   "repository": {
     "type": "git",
