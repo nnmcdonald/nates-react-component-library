@@ -18,9 +18,11 @@ import { Checkbox } from 'nates-react-component-library'
 A custom checkbox, uses a Font Awesome icon by default for the checkmark but may be customized further.
 
 #### Props
-| Name | Required | Description |
-|------|----------|-------------|
-| defaultChecked | No | Specifies if the checkbox input should be 'checked' when the component is rendered. |
+| Name | Required | Type | Default Value | Description |
+|------|----------|------|---------------|-------------|
+| label | No | string | "" | A string used to label the checkbox. |
+| defaultChecked | No | bool | false | Specifies if the checkbox input should be 'checked' when the component is rendered. |
+| onChange | No | function | N/A | A function to be called when the checkbox changes, i.e. is clicked. |
 
 ```jsx
 // Default
@@ -46,7 +48,7 @@ This is a generic form for collecting basic sales lead/contact information.
 #### Props
 | Name | Required | Type | Default Value | Description |
 |------|----------|------|---------------|-------------|
-| onSubmit | Yes | function | N/A | This function is called when the form is submittd, it should take a single argument for the event data. |
+| onSubmit | Yes | function | N/A | This function is called when the form is submitted, it should take a single argument for the event data. |
 | formH1 | No | string | "Contact Form" | A string value to be displayed in the h1 tag of the form. |
 | formDescription | No | string | "" | A string that will be displayed at the top of the form under the h1 tag. |
 | firstName | No | Boolean or Object | { label: "First Name", required: false, error: false } | If true then the firstName input field will be rendered with default values. |
