@@ -26,14 +26,14 @@ A custom checkbox, uses a swappable Font Awesome icon for the checkmark.
 | onChange | No | function | N/A | A function to be called when the checkbox changes, i.e. is clicked. |
 
 ```jsx
-// Default
+{/* Default */}
 <Checkbox 
     onChange={clickHandler}
     label="Would you like to subscribe to our newsletter?"
     checked={true}
 />
 
-// or with a custom icon
+{/* or with a custom icon */}
 <Checkbox
     onChange={clickHandler}
     label="Would you like to subscribe to our newsletter?"
@@ -63,7 +63,7 @@ This is a generic form for collecting basic sales lead/contact information.
 | email | No | Boolean or Object | { label: "Email", required: false, error: false }| If true then the email input field will be rendered with default values. |
 
 ```jsx
-// With just basic fields
+{/* With just basic fields */}
 <LeadForm
     onSubmit={submitHandler}
     formH1="Example Form"
@@ -76,7 +76,7 @@ This is a generic form for collecting basic sales lead/contact information.
     email={{label: "Email", required: true, error: this.state.errors.email}}
 />
 
-// With only specific basic inputs and additional custom inputs
+{/* With only specific basic inputs and additional custom inputs */}
 <LeadForm
     formH1="Enter a Raffle"
     formDescription="This is a second example where a user might enter a raffle."
@@ -141,11 +141,11 @@ Note: the input and button styling may be adjusted with the classes 'searchInput
 | onSearch | Yes | function | N/A | This function should process the search, it should expect one argument of type string for the query submitted. |
 
 ```jsx
-searchHandler = (query) => {
+const searchHandler = (query) => {
     // Do something with the query string.
 }
 
-<SearchBar onSearch={this.searchHandler} />
+<SearchBar onSearch={searchHandler} />
 ```
 
 ## Available Development Scripts
