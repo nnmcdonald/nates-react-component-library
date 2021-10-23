@@ -1,0 +1,75 @@
+.LeadForm {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.LeadForm__heading {
+    width: 95%;
+    padding: 0 2.5%;
+}
+
+.LeadForm__heading p {
+    padding: 0 2.5%;
+}
+
+.LeadForm__formGroup {
+    padding: 5px;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.LeadForm__formControl {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    margin: auto;
+}
+
+.LeadForm__formControl .error-msg {
+    color: #ab0f03;
+}
+
+.LeadForm__btnRow {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 0;
+}
+
+.LeadForm__btnRow button {
+    border-color: transparent;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #008cba;
+    display: inline-block;
+    font-weight: 300;
+    padding: 0.375rem 0.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+}
+
+.LeadForm__btnRow button:hover {
+    background-color: #006f94;
+    cursor: pointer;
+}
+
+.LeadForm__btnRow button:focus {
+    box-shadow: 0 0 0 0.2rem rgb(0 140 186 / 50%);
+}
+
+@media(min-width: 768px) {
+    .LeadForm__formGroup {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        margin: auto;
+    }
+
+    .LeadForm__formControl {
+        width: 45%;
+        padding: 5px 2.5%;
+        margin: unset;
+    }
+}
