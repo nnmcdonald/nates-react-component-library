@@ -48,16 +48,14 @@
   }
   
   /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
-    content: "\f00c";
-    font-family: FontAwesome;
+  .checkmark .icon {
     color: #fff;
     font-size: 0.8rem;
     display: none;
   }
   
   /* Show the checkmark when checked */
-  .checkbox input:checked ~ .checkmark:after {
+  .checkbox input:checked ~ .checkmark .icon {
     display: block;
     text-align: center;
     line-height: 1.2rem;

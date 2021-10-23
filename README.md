@@ -21,6 +21,7 @@ A custom checkbox, uses a Font Awesome icon by default for the checkmark but may
 | Name | Required | Type | Default Value | Description |
 |------|----------|------|---------------|-------------|
 | label | No | string | "" | A string used to label the checkbox. |
+| checkIcon | No | string | "fas fa-check" | This specifies the font-awesome classes to be used for the checkbox icon, the default is a solid checkmark. |
 | defaultChecked | No | bool | false | Specifies if the checkbox input should be 'checked' when the component is rendered. |
 | onChange | No | function | N/A | A function to be called when the checkbox changes, i.e. is clicked. |
 
