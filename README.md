@@ -21,6 +21,7 @@ This component may be used to add a dark overlay on top of another element which
 | Name | Required | Type | Default Value | Description |
 |------|----------|------|---------------|-------------|
 | onClick | No | function | N/A | This function may be used to hide the Backdrop or implement additional functionality. |
+| darkTheme | No | bool | false | If true then the backdrop color will be light instead. Use this if the Backdrop is overlayed on top of a dark background. |
 
 ```jsx
 <Backdrop onclick={clickHandler}>
