@@ -24,7 +24,10 @@ This component may be used to add a dark overlay on top of another element which
 | darkTheme | No | bool | false | If true then the backdrop color will be light instead. Use this if the Backdrop is overlayed on top of a dark background. |
 
 ```jsx
-<Backdrop onclick={clickHandler}>
+<Backdrop onclick={clickHandler} />
+
+{/* If Backdrop is on top of a dark background */}
+<Backdrop onclick={clickHandler} darkTheme={true} />
 ```
 
 ### `Checkbox`
@@ -179,14 +182,13 @@ npm link nates-react-component-library
 ```
 Note: this does not install the package as it normally would, a symlink to the development package (the locally stored copy) is created in the React app's "node_modules" folder but the package is not added to dependencies in package.json.
 
-It then starts Babel in watch mode, so any changes made to the src/ folder will be compiled automatically into the dist/ folder.
+It then starts Babel in watch mode, so any changes made to the 'src/lib/' folder will be compiled automatically into the 'dist/' folder.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Changes to the package will also be reflected in the linked App if you make edits.
 
 ### `npm test`
 
-Executes the react-scripts test script, which utilizes the Jest library to run the tests in the 'src/tests/' folder.
+Executes the 'react-scripts test' script, which utilizes the Jest library to run the tests in the 'src/tests/' folder.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.

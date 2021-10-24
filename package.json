@@ -21,10 +21,19 @@
     "prestart": "rimraf dist && rimraf node_modules/react && rimraf node_modules/react-dom",
     "start": "npm run watch",
     "prewatch": "npm link",
-    "watch": "npx babel src/lib --watch --out-dir dist/ --copy-files",
+    "watch": "npm run build -- --watch",
     "prebuild": "rimraf dist",
     "build": "npx babel src/lib --out-dir dist/ --copy-files",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "test-coverage": "npm test -- --coverage --watchAll=false"
+  },
+  "babel": {
+    "presets":["@babel/preset-env","@babel/preset-react"]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/lib/**"
+    ]
   },
   "repository": {
     "type": "git",
