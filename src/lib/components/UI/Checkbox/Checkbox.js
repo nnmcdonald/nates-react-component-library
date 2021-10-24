@@ -12,7 +12,7 @@ const Checkbox = (props) => {
                 {labelText}
                 <input type="checkbox" defaultChecked={props.checked} />
                 <span className={styles.checkmark}>
-                    <i class={`${styles.icon} ${checkIcon}`}></i>
+                    <i className={`${styles.icon} ${checkIcon}`}></i>
                 </span>
             </label>
         </div>

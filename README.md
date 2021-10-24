@@ -10,6 +10,22 @@ npm install https://github.com/nnmcdonald/nates-react-component-library#v1.3.0
 
 These React components are exported by this package and may be imported in other projects.
 
+### `Backdrop`
+```
+import { Backdrop } from 'nates-react-component-library'
+```
+
+This component may be used to add a dark overlay on top of another element which will prevent interaction with the underlying content. The 'props.onClick' function may be used to hide the Backdrop or implement additional functionality.
+
+#### Props
+| Name | Required | Type | Default Value | Description |
+|------|----------|------|---------------|-------------|
+| onClick | No | function | N/A | This function may be used to hide the Backdrop or implement additional functionality. |
+
+```jsx
+<Backdrop onclick={clickHandler}>
+```
+
 ### `Checkbox`
 ```
 import { Checkbox } from 'nates-react-component-library'
