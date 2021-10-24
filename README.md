@@ -183,6 +183,13 @@ It then starts Babel in watch mode, so any changes made to the src/ folder will 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+### `npm test`
+
+Executes the react-scripts test script, which utilizes the Jest library to run the tests in the 'src/tests/' folder.
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
 ### `npm run build`
 
-Builds the package for production and outputs to the 'dist/' folder. It does this by processing the 'src/' folder with Babel.
+Builds the package for production and outputs to the 'dist/' folder. It does this by processing the 'src/lib/' folder with Babel.
