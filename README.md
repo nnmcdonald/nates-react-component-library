@@ -1,14 +1,34 @@
 ## Installing this package in a React project
 
-Run the following command to install this package, replacing '#v1.2.1' will install the corresponding release.
+Run the following command to install this package, replacing '#v1.3.0' will install the corresponding release.
 
 ```
-npm install https://github.com/nnmcdonald/nates-react-component-library#v1.2.1
+npm install https://github.com/nnmcdonald/nates-react-component-library#v1.3.0
 ```
 
 ## Available Components
 
 These React components are exported by this package and may be imported in other projects.
+
+### `Backdrop`
+```
+import { Backdrop } from 'nates-react-component-library'
+```
+
+This component may be used to add a dark overlay on top of another element which will prevent interaction with the underlying content. The 'props.onClick' function may be used to hide the Backdrop or implement additional functionality.
+
+#### Props
+| Name | Required | Type | Default Value | Description |
+|------|----------|------|---------------|-------------|
+| onClick | No | function | N/A | This function may be used to hide the Backdrop or implement additional functionality. |
+| darkTheme | No | bool | false | If true then the backdrop color will be light instead. Use this if the Backdrop is overlayed on top of a dark background. |
+
+```jsx
+<Backdrop onclick={clickHandler} />
+
+{/* If Backdrop is on top of a dark background */}
+<Backdrop onclick={clickHandler} darkTheme={true} />
+```
 
 ### `Checkbox`
 ```
@@ -150,13 +170,9 @@ const searchHandler = (query) => {
 
 ## Available Development Scripts
 
-#### Warning
+#### Note
 
-When installing the node_modules for this package make sure to omit the peer dependencies like so:
-```
-npm i --omit=peer
-```
-When testing the installation with "npm link", the node_modules installed in the package may conflict with the node_modules that are installed in the React app and the easiest way I found to avoid this was to avoid duplicate dependency installations in the package, specifically 'react' and 'react-dom', if possible.
+When testing the installation with "npm link", the node_modules installed in the package may conflict with the node_modules that are installed in the React app and the easiest way I found to avoid this was to avoid duplicate dependency installations in the package directory, specifically 'react' and 'react-dom', if possible. Therefore, the "npm start" command removes these from the "node_modules" folder.
 
 ### `npm start`
 
@@ -166,11 +182,17 @@ npm link nates-react-component-library
 ```
 Note: this does not install the package as it normally would, a symlink to the development package (the locally stored copy) is created in the React app's "node_modules" folder but the package is not added to dependencies in package.json.
 
-It then starts Babel in watch mode, so any changes made to the src/ folder will be compiled automatically into the dist/ folder.
+It then starts Babel in watch mode, so any changes made to the 'src/lib/' folder will be compiled automatically into the 'dist/' folder.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Changes to the package will also be reflected in the linked App if you make edits.
+
+### `npm test`
+
+Executes the 'react-scripts test' script, which utilizes the Jest library to run the tests in the 'src/tests/' folder.
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
-Builds the package for production and outputs to the 'dist/' folder. It does this by processing the 'src/' folder with Babel.
+Builds the package for production and outputs to the 'dist/' folder. It does this by processing the 'src/lib/' folder with Babel.

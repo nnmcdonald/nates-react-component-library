@@ -26,7 +26,7 @@ var Checkbox = function Checkbox(props) {
   }), /*#__PURE__*/_react.default.createElement("span", {
     className: _CheckboxModule.default.checkmark
   }, /*#__PURE__*/_react.default.createElement("i", {
-    class: "".concat(_CheckboxModule.default.icon, " ").concat(checkIcon)
+    className: "".concat(_CheckboxModule.default.icon, " ").concat(checkIcon)
   }))));
 };
 
