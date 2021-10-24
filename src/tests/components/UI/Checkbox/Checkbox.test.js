@@ -20,6 +20,14 @@ describe('Checkbox component props', () => {
         const checkboxElement = screen.getByDisplayValue("on");
         expect(checkboxElement).not.toBeChecked();
     });
+
+    test('Checkmark icon class is customizeable', () => {
+        // Arrange
+        const { container } = render(<Checkbox checkIcon="fas fa-times" />)
+        
+        // Assert
+        expect(container.firstChild.querySelector('label span i').className).toEqual(expect.stringContaining("fas fa-times"));
+    });
     
     test('Renders Checkbox label text via prop', () => {
         // Arrange
