@@ -1,9 +1,9 @@
 ## Installing this package in a React project
 
-Run the following command to install this package, replacing '#v1.2.1' will install the corresponding release.
+Run the following command to install this package, replacing '#v1.3.0' will install the corresponding release.
 
 ```
-npm install https://github.com/nnmcdonald/nates-react-component-library#v1.2.1
+npm install https://github.com/nnmcdonald/nates-react-component-library#v1.3.0
 ```
 
 ## Available Components
@@ -150,13 +150,9 @@ const searchHandler = (query) => {
 
 ## Available Development Scripts
 
-#### Warning
+#### Note
 
-When installing the node_modules for this package make sure to omit the peer dependencies like so:
-```
-npm i --omit=peer
-```
-When testing the installation with "npm link", the node_modules installed in the package may conflict with the node_modules that are installed in the React app and the easiest way I found to avoid this was to avoid duplicate dependency installations in the package, specifically 'react' and 'react-dom', if possible.
+When testing the installation with "npm link", the node_modules installed in the package may conflict with the node_modules that are installed in the React app and the easiest way I found to avoid this was to avoid duplicate dependency installations in the package directory, specifically 'react' and 'react-dom', if possible. Therefore, the "npm start" command removes these from the "node_modules" folder.
 
 ### `npm start`
 
